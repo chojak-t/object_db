@@ -12,100 +12,156 @@ import javax.persistence.*;
 @Entity
 public class Samochod {
    @Id
-   public String rejestracja;
+   public java.lang.String rejestracja;
    
    @Basic(optional = false) 
-   public String vin;
+   public java.lang.String vin;
    
    @Basic(optional = false) 
-   public String nrSilnika;
+   public java.lang.String nrSilnika;
    
    @Basic(optional = false) 
    public double stanLicznika;
    
    @Basic(optional = false) 
-   public String marka;
+   public java.lang.String marka;
    
    @Basic(optional = false) 
-   public String model;
+   public java.lang.String model;
    
    /** Klient posiada samochód */
-   @ManyToMany
-   public List<Klient> klient;
+   @ManyToMany(mappedBy = "klient")
+   public java.util.Collection<Klient> klient;
    
-   @ManyToMany
-   public List<Zlecenie> zlecenie;
+   @ManyToMany(mappedBy = "zlecenie")
+   public java.util.Collection<Zlecenie> zlecenie;
    
-   public Samochod(){}
-   
-   public Klient wyswietlWlascicielaSamochodu() {
+   public java.lang.Object wyswietlWlascicielaSamochodu() {
       // TODO: implement
       return null;
    }
 
-    public String getRejestracja() {
-        return rejestracja;
-    }
-
-    public void setRejestracja(String rejestracja) {
-        this.rejestracja = rejestracja;
-    }
-
-    public String getVin() {
-        return vin;
-    }
-
-    public void setVin(String vin) {
-        this.vin = vin;
-    }
-
-    public String getNrSilnika() {
-        return nrSilnika;
-    }
-
-    public void setNrSilnika(String nrSilnika) {
-        this.nrSilnika = nrSilnika;
-    }
-
-    public double getStanLicznika() {
-        return stanLicznika;
-    }
-
-    public void setStanLicznika(double stanLicznika) {
-        this.stanLicznika = stanLicznika;
-    }
-
-    public String getMarka() {
-        return marka;
-    }
-
-    public void setMarka(String marka) {
-        this.marka = marka;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public List<Klient> getKlient() {
-        return klient;
-    }
-
-    public void setKlient(List<Klient> klient) {
-        this.klient = klient;
-    }
-
-    public List<Zlecenie> getZlecenie() {
-        return zlecenie;
-    }
-
-    public void setZlecenie(List<Zlecenie> zlecenie) {
-        this.zlecenie = zlecenie;
-    }
+   public java.util.Collection<Klient> getKlient() {
+      if (klient == null)
+         klient = new java.util.HashSet<Klient>();
+      return klient;
+   }
    
+   public java.util.Iterator getIteratorKlient() {
+      if (klient == null)
+         klient = new java.util.HashSet<Klient>();
+      return klient.iterator();
+   }
    
+   /** @pdGenerated default setter
+     * @param newKlient */
+   public void setKlient(java.util.Collection<Klient> newKlient) {
+      removeAllKlient();
+      for (java.util.Iterator iter = newKlient.iterator(); iter.hasNext();)
+         addKlient((Klient)iter.next());
+   }
+   
+   /** @pdGenerated default add
+     * @param newKlient */
+   public void addKlient(Klient newKlient) {
+      if (newKlient == null)
+         return;
+      if (this.klient == null)
+         this.klient = new java.util.HashSet<Klient>();
+      if (!this.klient.contains(newKlient))
+      {
+         this.klient.add(newKlient);
+         newKlient.addSamochod(this);      
+      }
+   }
+   
+   /** @pdGenerated default remove
+     * @param oldKlient */
+   public void removeKlient(Klient oldKlient) {
+      if (oldKlient == null)
+         return;
+      if (this.klient != null)
+         if (this.klient.contains(oldKlient))
+         {
+            this.klient.remove(oldKlient);
+            oldKlient.removeSamochod(this);
+         }
+   }
+   
+   /** @pdGenerated default removeAll */
+   public void removeAllKlient() {
+      if (klient != null)
+      {
+         Klient oldKlient;
+         for (java.util.Iterator iter = getIteratorKlient(); iter.hasNext();)
+         {
+            oldKlient = (Klient)iter.next();
+            iter.remove();
+            oldKlient.removeSamochod(this);
+         }
+      }
+   }
+   /** @pdGenerated default getter */
+   public java.util.Collection<Zlecenie> getZlecenie() {
+      if (zlecenie == null)
+         zlecenie = new java.util.HashSet<Zlecenie>();
+      return zlecenie;
+   }
+   
+   /** @pdGenerated default iterator getter */
+   public java.util.Iterator getIteratorZlecenie() {
+      if (zlecenie == null)
+         zlecenie = new java.util.HashSet<Zlecenie>();
+      return zlecenie.iterator();
+   }
+   
+   /** @pdGenerated default setter
+     * @param newZlecenie */
+   public void setZlecenie(java.util.Collection<Zlecenie> newZlecenie) {
+      removeAllZlecenie();
+      for (java.util.Iterator iter = newZlecenie.iterator(); iter.hasNext();)
+         addZlecenie((Zlecenie)iter.next());
+   }
+   
+   /** @pdGenerated default add
+     * @param newZlecenie */
+   public void addZlecenie(Zlecenie newZlecenie) {
+      if (newZlecenie == null)
+         return;
+      if (this.zlecenie == null)
+         this.zlecenie = new java.util.HashSet<Zlecenie>();
+      if (!this.zlecenie.contains(newZlecenie))
+      {
+         this.zlecenie.add(newZlecenie);
+         newZlecenie.addSamochod(this);      
+      }
+   }
+   
+   /** @pdGenerated default remove
+     * @param oldZlecenie */
+   public void removeZlecenie(Zlecenie oldZlecenie) {
+      if (oldZlecenie == null)
+         return;
+      if (this.zlecenie != null)
+         if (this.zlecenie.contains(oldZlecenie))
+         {
+            this.zlecenie.remove(oldZlecenie);
+            oldZlecenie.removeSamochod(this);
+         }
+   }
+   
+   /** @pdGenerated default removeAll */
+   public void removeAllZlecenie() {
+      if (zlecenie != null)
+      {
+         Zlecenie oldZlecenie;
+         for (java.util.Iterator iter = getIteratorZlecenie(); iter.hasNext();)
+         {
+            oldZlecenie = (Zlecenie)iter.next();
+            iter.remove();
+            oldZlecenie.removeSamochod(this);
+         }
+      }
+   }
+
 }
