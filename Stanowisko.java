@@ -25,12 +25,4 @@ public class Stanowisko {
       // TODO: implement
       return null;
    }
-
-    void addZlecenie(Zlecenie aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void removeZlecenie(Zlecenie aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
