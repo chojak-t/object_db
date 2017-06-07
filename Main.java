@@ -12,7 +12,7 @@ import javax.persistence.*;
  */
 public class Main {
     
-    private static final String DATABASEPATH = "C:/warsztat.odb";
+    private static final String DATABASEPATH = "db/warsztat.odb";
 
     /**
      * @param args the command line arguments
