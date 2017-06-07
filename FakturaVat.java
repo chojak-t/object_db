@@ -13,5 +13,5 @@ import javax.persistence.Entity;
  */
 @Entity
 public class FakturaVat extends Faktura{
-    
+    public FakturaVat(){}
 }
