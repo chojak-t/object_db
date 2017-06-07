@@ -1,45 +1,38 @@
 package warsztat;
 
-/***********************************************************************
- * Module:  Zlecenie.java
- * Author:  satan
- * Purpose: Defines the Class Zlecenie
- ***********************************************************************/
-
 import java.util.*;
 
-/** @pdOid cd156783-8da7-4835-86f9-ebbc1186e3f9 */
 public class Zlecenie {
-   /** @pdOid 68843dad-9b6b-4e58-b54b-2718eeedf1e8 */
+   
    public int id;
-   /** @pdOid dff63d1a-92fe-4959-bb58-1f571a726e91 */
+   
    public java.lang.String nazwaZlecenia;
-   /** @pdOid fb76f809-5f98-454f-aab7-b83a88e8d473 */
+  
    public java.lang.String opisZlecenia;
-   /** @pdOid a525cb5d-ce16-4ea6-86c4-b34709194bd6 */
+  
    public double kwotaZlecenia;
-   /** @pdOid 752215ca-add9-469d-89a6-c4c6b64cac7e */
+
    public java.util.Date dataZlozenia;
-   /** @pdOid bee7a74c-1896-4f48-a378-661e3e420d29 */
+
    public java.util.Date terminWykonania;
-   /** @pdOid f8fad623-24c7-4e3b-b3fd-65b8cb7ee8f1 */
+
    public java.util.Date dataWykonania;
-   /** @pdOid ed683dbd-0a13-4fe5-8538-eeb6d87148e7 */
+
    public boolean czyKosztorysZaakceptowany;
-   /** @pdOid e616eebb-c510-46bf-95df-330999aac4bc */
+
    public double kwotaKosztorysu;
-   /** @pdOid c79ad7f3-3047-4c2e-a471-2c7b2ea78c6e */
+
    public java.util.Date dataWystawieniaKosztorysu;
-   /** @pdOid a0645e80-8332-4abf-9b0f-7515014ad9bf */
+
    public java.lang.String statusZlecenia;
    
    /** Pracownik ma przypisywane zlecenie. */
    public java.util.Collection pracownikZlecenieWykonawca;
-   /** @pdRoleInfo migr=no name=Stanowisko assc=zlecenieStanowisko coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+
    public java.util.Collection<Stanowisko> stanowisko;
-   /** @pdRoleInfo migr=no name=Pracownik assc=pracownikZlecenieWystawca mult=1..1 */
+
    public Pracownik pracownik_zlecenie_wystawca;
-   /** @pdRoleInfo migr=no name=Samochod assc=zlecenieSamochod coll=java.util.Collection impl=java.util.HashSet mult=0..* side=A */
+
    public java.util.Collection<Samochod> samochod;
    
    /** @pdOid 6147d24a-5637-412b-8d09-5df437e058ea */
