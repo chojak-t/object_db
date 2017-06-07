@@ -77,4 +77,12 @@ public class Pracownik implements Serializable {
 		return "Pracownik [id=" + id + ", imie=" + imie + ", nazwisko=" + nazwisko
 				+ ", title=" + tytul + ", telefony=" + telefony + "]";
 	}
+
+    void removeZlecenie_pracownik_wystawca(Zlecenie aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void addZlecenie_pracownik_wystawca(Zlecenie aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

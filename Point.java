@@ -10,6 +10,7 @@ import javax.persistence.*;
  *
  * @author Tomasz Chojak
  */
+@Deprecated
 @Entity
 public class Point implements Serializable {
     @Id @GeneratedValue

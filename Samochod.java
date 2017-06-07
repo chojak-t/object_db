@@ -52,17 +52,13 @@ public class Samochod {
          klient = new java.util.HashSet<Klient>();
       return klient.iterator();
    }
-   
-   /** @pdGenerated default setter
-     * @param newKlient */
+
    public void setKlient(java.util.Collection<Klient> newKlient) {
       removeAllKlient();
       for (java.util.Iterator iter = newKlient.iterator(); iter.hasNext();)
          addKlient((Klient)iter.next());
    }
    
-   /** @pdGenerated default add
-     * @param newKlient */
    public void addKlient(Klient newKlient) {
       if (newKlient == null)
          return;
@@ -75,8 +71,6 @@ public class Samochod {
       }
    }
    
-   /** @pdGenerated default remove
-     * @param oldKlient */
    public void removeKlient(Klient oldKlient) {
       if (oldKlient == null)
          return;
@@ -88,7 +82,6 @@ public class Samochod {
          }
    }
    
-   /** @pdGenerated default removeAll */
    public void removeAllKlient() {
       if (klient != null)
       {
@@ -101,30 +94,25 @@ public class Samochod {
          }
       }
    }
-   /** @pdGenerated default getter */
+
    public java.util.Collection<Zlecenie> getZlecenie() {
       if (zlecenie == null)
          zlecenie = new java.util.HashSet<Zlecenie>();
       return zlecenie;
    }
    
-   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorZlecenie() {
       if (zlecenie == null)
          zlecenie = new java.util.HashSet<Zlecenie>();
       return zlecenie.iterator();
    }
    
-   /** @pdGenerated default setter
-     * @param newZlecenie */
    public void setZlecenie(java.util.Collection<Zlecenie> newZlecenie) {
       removeAllZlecenie();
       for (java.util.Iterator iter = newZlecenie.iterator(); iter.hasNext();)
          addZlecenie((Zlecenie)iter.next());
    }
    
-   /** @pdGenerated default add
-     * @param newZlecenie */
    public void addZlecenie(Zlecenie newZlecenie) {
       if (newZlecenie == null)
          return;
@@ -137,8 +125,6 @@ public class Samochod {
       }
    }
    
-   /** @pdGenerated default remove
-     * @param oldZlecenie */
    public void removeZlecenie(Zlecenie oldZlecenie) {
       if (oldZlecenie == null)
          return;
@@ -150,7 +136,6 @@ public class Samochod {
          }
    }
    
-   /** @pdGenerated default removeAll */
    public void removeAllZlecenie() {
       if (zlecenie != null)
       {
